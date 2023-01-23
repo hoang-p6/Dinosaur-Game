@@ -4,7 +4,7 @@
 
 ## By Phong Hoang
 
-[Trello](https://trello.com/u/phonghoang54/boards) || [GitHub](https://github.com/hoang-p6/p1-Dinosaur-Game)
+[Trello](https://trello.com/b/r48c1rIB/mvp) || [GitHub](https://github.com/hoang-p6/p1-Dinosaur-Game)
 
 ---
 
@@ -22,10 +22,9 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 - [x] Decide on game and get soft approval
 - [x] Create repository
-- [ ] Start building CSS for dinosaur and obstacles 
+- [ ] Start building CSS for dinosaur and obstacles
 - [ ] Add functionality and animations to game contents
 - [ ] Add functionality to buttons and game resets, score, etc.
-
 
 ---
 
