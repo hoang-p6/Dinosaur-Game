@@ -1,4 +1,4 @@
-# **_Jumpman_**
+# **_Dino Jump_**
 
 ## Date: 01/22/2023
 
@@ -14,28 +14,15 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 ---
 
-## **_Technologies Used_**
+## **_Images_**
 
-- Item 1
-- Item 2
-  - Sub Item
-
-1. Item 1
-2. Item 2
-   - Sub Item
-
----
-
-## **_Screenshots_**
-
-![Image]
-![image]
+![Image](https://dinosaur-game.io/data/image/dinosaur-game.png)
 
 # **_Updates_**
 
 - [x] Decide on game and get soft approval
 - [x] Create repository
-- [ ] Start building CSS for Jumpman and obstacles 
+- [ ] Start building CSS for dinosaur and obstacles 
 - [ ] Add functionality and animations to game contents
 - [ ] Add functionality to buttons and game resets, score, etc.
 
@@ -44,4 +31,4 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 ## _Credits_
 
-Images:
+Images: https://dinosaur-game.io/
