@@ -1,0 +1,19 @@
+body{
+  background-color:rgb(63, 69, 83)
+}
+h1{
+  font-size: 100px;
+  display:flex;
+  justify-content:center;
+  color:beige;
+}
+a{
+  font-size: 80px;
+  display:flex;
+  justify-content:center;
+  text-decoration: none;
+  color:white;
+}
+a:hover{
+  font-size:90px;
+}

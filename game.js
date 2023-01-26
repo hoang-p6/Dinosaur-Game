@@ -1,12 +1,20 @@
+//VARIABLES//
 let dino = document.querySelector('.dino')
 let obstacle = document.querySelector('.obs')
 let obstacleTwo = document.querySelector('.obs2')
 let dinoPosition = dino.offsetTop
 let obstaclePosition = obstacle.offsetLeft
 let obstacleTwoPosition = obstacleTwo.offsetLeft
+let body = document.querySelector('body')
+let score = 0
 let scoreDisplay = document.querySelector('.score')
-let gameRunning = true
+let gameRunning = false
+const updateScore = () => {
+  score += 1
+  scoreDisplay.innerText = score
+}
 
+//FUNCTIONS//
 //When space is pressed down, Dino jumps
 const jump = () => {
   document.addEventListener('keydown', (key) => {
@@ -20,12 +28,6 @@ const jump = () => {
       dino.style.bottom = '0px'
     }
   })
-}
-
-let score = 0
-const updateScore = () => {
-  score += 1
-  scoreDisplay.innerText = score
 }
 
 const wait = (time) => {
@@ -51,9 +53,15 @@ const gamePlay = () => {
           (obstacle.offsetLeft === 40 && dino.offsetTop >= 600) ||
           (obstacle.offsetLeft === -10 && dino.offsetTop >= 600)
         ) {
-          alert('you lose')
+          let body = document.querySelector('body')
+          body.style.background = 'red'
+          body.style.height = '100px'
+          body.style.width = '100px'
+          body.innerText = 'DEAD'
+
+          return gameRunning === false
         }
-        if (obstacleTwo.offsetLeft === 40 && dino.offsetTop < 600) {
+        if (obstacle.offsetLeft === 40 && dino.offsetTop < 600) {
           updateScore()
         }
         obstacle.style.right = `${position}px`
@@ -79,35 +87,43 @@ const gamePlayTwo = () => {
           (obstacleTwo.offsetLeft === 40 && dino.offsetTop >= 600) ||
           (obstacleTwo.offsetLeft === -10 && dino.offsetTop >= 600)
         ) {
-          alert('you lose')
+          return gameRunning === false
         }
         if (obstacleTwo.offsetLeft === 40 && dino.offsetTop < 600) {
           updateScore()
         }
         obstacleTwo.style.right = `${position}px`
-      }, 16)
-      await wait(1)
+      }, 3)
+      await wait(0)
     }
   }
   runObstacleTwo()
 }
 
+//GAME//
 if (gameRunning === true) {
   jump()
   setInterval(
     (test = () => {
       gamePlay()
     }),
-    8000
+    4500
   )
   setInterval(
     (test = () => {
       gamePlayTwo()
     }),
-    6000
+    5000
   )
+} else {
+  clearInterval(gamePlay)
+  clearInterval(gamePlayTwo)
 }
-
-const togglePlay = () => {
-  return gameRunning === false
-}
+// let pause = document.querySelector('.pause')
+// let menu = document.querySelector('.pause-menu')
+// const pauseGame = () => {
+//   pause.addEventListener('click', () => {
+//     menu.body.innerHTML = document.appendChild(canvas)
+//   })
+// }
+// pauseGame()
