@@ -1,10 +1,9 @@
+/* GAME */
 h1{
   font-size:50px;
   text-align:center;
 }
-.gameBox{
 
-}
 .dino{
 display:block;
 position:absolute;
@@ -21,7 +20,7 @@ background-color:green;
   bottom: 0px;
   width:40px;
   height:50px;
-  background-color:blue;
+  background-color:black;
 } 
 .obs2{
   display:block;
@@ -34,4 +33,69 @@ background-color:green;
 }
 .score{
   text-align:center;
+  font-size:50px;
+  color:beige;
+}
+body{
+  background-color:rgb(63, 63, 67);
+}
+
+/* HOMESCREEN */
+h1{
+  font-size: 100px;
+  display:flex;
+  justify-content:center;
+  color:rgb(221, 221, 184);
+}
+a{
+  font-size: 80px;
+  display:flex;
+  justify-content:center;
+  text-decoration: none;
+  color:beige;
+}
+a:hover{
+  font-size:90px;
+}
+
+h1{
+  font-size: 100px;
+  display:flex;
+  justify-content:center;
+  color:rgb(221, 221, 184);
+}
+container{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+/* PAUSE */
+.resume{
+  height:50px;
+  width:100px;
+}
+.restart{
+  height:50px;
+  width:100px;
+}
+.home{
+  height:50px;
+  width:100px;
+}
+/* GAMEOVER */
+
+h1{
+  font-size: 100px;
+  display:flex;
+  justify-content:center;
+  color:rgb(221, 221, 184);
+}
+.restart-button{
+background-color:rgb(63, 63, 67);
+height:100px;
+}
+.restart-button:hover{
+  background-color:rgb(63, 63, 67);
+height:110px;
+
 }

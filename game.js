@@ -8,7 +8,8 @@ let obstacleTwoPosition = obstacleTwo.offsetLeft
 let body = document.querySelector('body')
 let score = 0
 let scoreDisplay = document.querySelector('.score')
-let gameRunning = false
+let lose = document.querySelector('.lose-screen')
+let gameRunning = true
 const updateScore = () => {
   score += 1
   scoreDisplay.innerText = score
@@ -16,6 +17,7 @@ const updateScore = () => {
 
 //FUNCTIONS//
 //When space is pressed down, Dino jumps
+
 const jump = () => {
   document.addEventListener('keydown', (key) => {
     if (key.code === 'Space') {
@@ -53,13 +55,7 @@ const gamePlay = () => {
           (obstacle.offsetLeft === 40 && dino.offsetTop >= 600) ||
           (obstacle.offsetLeft === -10 && dino.offsetTop >= 600)
         ) {
-          let body = document.querySelector('body')
-          body.style.background = 'red'
-          body.style.height = '100px'
-          body.style.width = '100px'
-          body.innerText = 'DEAD'
-
-          return gameRunning === false
+          window.location.href = 'dead.html'
         }
         if (obstacle.offsetLeft === 40 && dino.offsetTop < 600) {
           updateScore()
