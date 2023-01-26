@@ -1,4 +1,5 @@
 h1{
+  font-size:50px;
   text-align:center;
 }
 /* .gameBox{
@@ -32,4 +33,7 @@ background-color:green;
   width:40px;
   height:50px;
   background-color:black;
+}
+.score{
+  text-align:center;
 }

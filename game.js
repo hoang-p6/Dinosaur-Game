@@ -1,32 +1,41 @@
 let dino = document.querySelector('.dino')
-//When space is pressed down, Dino jumps
-document.addEventListener('keydown', (key) => {
-  if (key.code === 'Space') {
-    dino.style.bottom = '200px'
-    // console.log(dino.offsetTop)
-  }
-})
-//When space is released, Dino comes back down
-document.addEventListener('keyup', (key) => {
-  if (key.code === 'Space') {
-    dino.style.bottom = '0px'
-    // console.log(dino.offsetTop)
-  }
-})
-
 let obstacle = document.querySelector('.obs')
 let obstacleTwo = document.querySelector('.obs2')
-let dinoPosition = dino.offsetLeft
+let dinoPosition = dino.offsetTop
 let obstaclePosition = obstacle.offsetLeft
 let obstacleTwoPosition = obstacleTwo.offsetLeft
-//First Obstacle
-function wait(time) {
+let scoreDisplay = document.querySelector('.score')
+let gameRunning = true
+
+//When space is pressed down, Dino jumps
+const jump = () => {
+  document.addEventListener('keydown', (key) => {
+    if (key.code === 'Space') {
+      dino.style.bottom = '200px'
+    }
+  })
+  //When space is released, Dino comes back down
+  document.addEventListener('keyup', (key) => {
+    if (key.code === 'Space') {
+      dino.style.bottom = '0px'
+    }
+  })
+}
+
+let score = 0
+const updateScore = () => {
+  score += 1
+  scoreDisplay.innerText = score
+}
+
+const wait = (time) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('')
     }, time)
   })
 }
+//First Obstacle
 const gamePlay = () => {
   function wait(time) {
     return new Promise((resolve) => {
@@ -38,8 +47,14 @@ const gamePlay = () => {
   async function runObstacle() {
     for (let position = 0; position < 1000; position++) {
       setTimeout(() => {
-        if (obstacle.offsetLeft === 40 && dino.offsetTop >= 600) {
+        if (
+          (obstacle.offsetLeft === 40 && dino.offsetTop >= 600) ||
+          (obstacle.offsetLeft === -10 && dino.offsetTop >= 600)
+        ) {
           alert('you lose')
+        }
+        if (obstacleTwo.offsetLeft === 40 && dino.offsetTop < 600) {
+          updateScore()
         }
         obstacle.style.right = `${position}px`
       }, 1)
@@ -49,14 +64,6 @@ const gamePlay = () => {
   runObstacle()
 }
 //Second Obstacle
-
-function wait(time) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('')
-    }, time)
-  })
-}
 const gamePlayTwo = () => {
   function wait(time) {
     return new Promise((resolve) => {
@@ -68,8 +75,14 @@ const gamePlayTwo = () => {
   async function runObstacleTwo() {
     for (let position = 0; position < 1000; position++) {
       setTimeout(() => {
-        if (obstacleTwo.offsetLeft === 40 && dino.offsetTop >= 600) {
+        if (
+          (obstacleTwo.offsetLeft === 40 && dino.offsetTop >= 600) ||
+          (obstacleTwo.offsetLeft === -10 && dino.offsetTop >= 600)
+        ) {
           alert('you lose')
+        }
+        if (obstacleTwo.offsetLeft === 40 && dino.offsetTop < 600) {
+          updateScore()
         }
         obstacleTwo.style.right = `${position}px`
       }, 16)
@@ -79,11 +92,8 @@ const gamePlayTwo = () => {
   runObstacleTwo()
 }
 
-function getRandomNum(min, max) {
-  return Math.random() * (8000 - 6000) + 6000
-}
-gameRunning = true
 if (gameRunning === true) {
+  jump()
   setInterval(
     (test = () => {
       gamePlay()
@@ -99,15 +109,5 @@ if (gameRunning === true) {
 }
 
 const togglePlay = () => {
-  return gameRunning ? false : true
+  return gameRunning === false
 }
-
-// console.log(dinoPosition)
-// console.log(obstaclePosition)
-// console.log(obstacleTwoPosition)
-
-if (obstacle.offsetLeft === '-78') {
-  console.log('obstacle hi')
-}
-let dinosaur = dino.offsetTop
-console.log(dinosaur)
