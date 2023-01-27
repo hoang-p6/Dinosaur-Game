@@ -30,20 +30,4 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 ## _Credits_
 
-Images:
-https://dinosaur-game.io/
-
-https://images.vexels.com/media/users/3/208088/isolated/preview/d23c2a16fc744f7c4b3ccd93057e0db1-pterod--ctilo-azul-plano-by-vexels.png
-
-https://cdn3.iconfinder.com/data/icons/prehistoric-animals-color/200/21-512.png
-
-https://icon-library.com/icon/refresh-icon-white-1.html
-
-Informational:
-https://javascript.plainenglish.io/javascript-slow-down-for-loop-9d1caaeeeeed
-
-https://www.geeksforgeeks.org/how-to-delay-a-loop-in-javascript-using-async-await-with-promise/
-
-https://www.w3schools.com/jsref/prop_element_offsettop.asp
-
-https://www.geeksforgeeks.org/how-to-find-the-position-of-html-elements-in-javascript/
+Images: https://dinosaur-game.io/
