@@ -10,7 +10,7 @@ let body = document.querySelector('body')
 let score = 0
 let scoreDisplay = document.querySelector('.score')
 let lose = document.querySelector('.lose-screen')
-let gameRunning = false
+let gameRunning = true
 //FUNCTIONS//
 //When space is pressed down, Dino jumps
 const updateScore = () => {
