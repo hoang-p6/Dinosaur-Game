@@ -10,7 +10,7 @@ let body = document.querySelector('body')
 let score = 0
 let scoreDisplay = document.querySelector('.score')
 let lose = document.querySelector('.lose-screen')
-let gameRunning = true
+let gameRunning = false
 //FUNCTIONS//
 //When space is pressed down, Dino jumps
 const updateScore = () => {
@@ -22,7 +22,6 @@ const jump = () => {
   document.addEventListener('keydown', (key) => {
     if (key.code === 'Space') {
       dino.style.top = '4rem'
-      Animation
     }
   })
   //When space is released, Dino comes back down
@@ -153,7 +152,46 @@ if (
 ) {
   updateScore()
 }
-// jump()
+
+//BACKGROUND//
+const background = () => {
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('')
+      }, time)
+    })
+  }
+  async function moveBackground() {
+    for (let position = 960; position > -10; position--) {
+      setTimeout(() => {
+        let terry = document.querySelector('.terry')
+        terry.style.left = `${position}px`
+      }, 1)
+      await wait(0)
+    }
+  }
+  moveBackground()
+}
+const backgroundTwo = () => {
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('')
+      }, time)
+    })
+  }
+  async function moveBackgroundTwo() {
+    for (let position = 960; position > -10; position--) {
+      setTimeout(() => {
+        let doug = document.querySelector('.doug')
+        doug.style.left = `${position}px`
+      }, 1)
+      await wait(0)
+    }
+  }
+  moveBackgroundTwo()
+}
 // GAME//
 if (gameRunning === true) {
   jump()
@@ -168,6 +206,18 @@ if (gameRunning === true) {
       gamePlayTwo()
     }),
     6000
+  )
+  setInterval(
+    (test = () => {
+      background()
+    }),
+    4620
+  )
+  setInterval(
+    (test = () => {
+      backgroundTwo()
+    }),
+    7000
   )
 } else {
   clearInterval(gamePlay)

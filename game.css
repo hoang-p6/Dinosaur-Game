@@ -6,6 +6,7 @@
   "empty game empty"
   "empty game empty"
   "empty game empty";
+  background-color:rgb(63, 63, 67);
 }
 .gameBox{
   grid-area:game;
@@ -13,27 +14,25 @@
   height:35rem;
   width:50rem;
 } 
-
+/* .cover{
+  grid-area:empty;
+  background-color:rgb(63, 63, 67);
+  height: 35rem;
+  width:50rem
+} */
 h1{
   font-size:50px;
   text-align:center;
   color:beige;
 }
 
-@keyframes dinoJump{
-0%{ transform: translateY(176px);
-}
-100% {transform: translateY(-176px);
-}
-}
 .dino{
 display:block;
 position:relative;
 top:15rem;
 width: 3rem;
 height: 8rem;
-background-color:green;
-animation:dinoJump .7s ease-in;
+background-color:rgb(186, 219, 248);
 }
 
 .obs{
@@ -43,7 +42,7 @@ animation:dinoJump .7s ease-in;
   top: 31rem;
   width:4rem;
   height:4rem;
-  background-color:rgb(63, 63, 67);
+  background-color:rgb(186, 219, 248);
 } 
 .obs2{
   display:block;
@@ -52,10 +51,11 @@ animation:dinoJump .7s ease-in;
   top:31rem;
   width:4rem;
   height:4rem;
-  background-color:rgb(63, 63, 67);
+  background-color:rgb(186, 219, 248);
 }
 .score{
   text-align:center;
+  position:relative;
   font-size:50px;
   color:beige;
 }
@@ -63,6 +63,20 @@ body{
   background-color:rgb(63, 63, 67);
 }
 
+.terry{
+  position:absolute;
+  height:4rem;
+  background-color:rgb(186, 219, 248);
+  left:55rem;
+  top:12rem;
+}
+.doug{
+  position:absolute;
+  height:3rem;
+  background-color:rgb(186, 219, 248);
+  left:55rem;
+  top:6rem;
+}
 /* HOMESCREEN */
 .home-h1{
   font-size: 100px;
@@ -85,19 +99,7 @@ container{
   flex-direction:column;
   justify-content: center;
 }
-/* PAUSE */
-.resume{
-  height:50px;
-  width:100px;
-}
-.restart{
-  height:50px;
-  width:100px;
-}
-.home{
-  height:50px;
-  width:100px;
-}
+
 /* GAMEOVER */
 
 .dead-h1{
