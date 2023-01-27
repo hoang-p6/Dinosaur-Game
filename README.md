@@ -11,6 +11,7 @@
 ## **_Description_**
 
 In this game, avoid the obstacles by jumping over them. Run as long as you can survive! Inspired by the dinosaur game
+[Game Link](phongs-dino-jump.surge.sh)
 
 ---
 
@@ -30,18 +31,22 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 ## _Credits_
 
-Images: https://dinosaur-game.io/
-https://images.vexels.com/media/users/3/208088/isolated/preview/d23c2a16fc744f7c4b3ccd93057e0db1-pterod--ctilo-azul-plano-by-vexels.png
+### Images
 
-https://cdn3.iconfinder.com/data/icons/prehistoric-animals-color/200/21-512.png
+[dinosaur game picture]: (https://dinosaur-game.io/
 
-https://icon-library.com/icon/refresh-icon-white-1.html
+https://images.vexels.com/media/users/3/208088/isolated/preview/d23c2a16fc744f7c4b3ccd93057e0db1-pterod--ctilo-azul-plano-by-vexels.png)
 
-Informational:
-https://javascript.plainenglish.io/javascript-slow-down-for-loop-9d1caaeeeeed
+[Pterodactyl](https://cdn3.iconfinder.com/data/icons/prehistoric-animals-color/200/21-512.png)
 
-https://www.geeksforgeeks.org/how-to-delay-a-loop-in-javascript-using-async-await-with-promise/
+[Restart Icon](https://icon-library.com/icon/refresh-icon-white-1.html)
 
-https://www.w3schools.com/jsref/prop_element_offsettop.asp
+### Informational
 
-https://www.geeksforgeeks.org/how-to-find-the-position-of-html-elements-in-javascript/
+[Slowing Down Loops](https://javascript.plainenglish.io/javascript-slow-down-for-loop-9d1caaeeeeed)
+
+[Delaying Loops](https://www.geeksforgeeks.org/how-to-delay-a-loop-in-javascript-using-async-await-with-promise/)
+
+[Using offsetTop](https://www.w3schools.com/jsref/prop_element_offsettop.asp)
+
+[Finding Element Position](https://www.geeksforgeeks.org/how-to-find-the-position-of-html-elements-in-javascript/)
