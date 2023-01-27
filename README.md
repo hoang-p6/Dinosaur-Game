@@ -22,9 +22,9 @@ In this game, avoid the obstacles by jumping over them. Run as long as you can s
 
 - [x] Decide on game and get soft approval
 - [x] Create repository
-- [ ] Start building CSS for dinosaur and obstacles
-- [ ] Add functionality and animations to game contents
-- [ ] Add functionality to buttons and game resets, score, etc.
+- [x] Start building CSS for dinosaur and obstacles
+- [x] Add functionality and animations to game contents
+- [x] Add functionality to buttons and game resets, score, etc.
 
 ---
 
