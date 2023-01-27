@@ -21,74 +21,16 @@ const updateScore = () => {
 const jump = () => {
   document.addEventListener('keydown', (key) => {
     if (key.code === 'Space') {
-      dino.style.top = '4rem'
+      dino.style.top = '18rem'
     }
   })
   //When space is released, Dino comes back down
   document.addEventListener('keyup', (key) => {
     if (key.code === 'Space') {
-      dino.style.top = '15rem'
+      dino.style.top = '27.5rem'
     }
   })
 }
-// const dinoPlay = () => {
-//   function wait(time) {
-//     return new Promise((resolve) => {
-//       setTimeout(() => {
-//         resolve('')
-//       }, time)
-//     })
-//   }
-
-//   async function dinoUp() {
-//     for (let position = 240; position > 65; position--) {
-//       setTimeout(() => {
-//         dino.style.top = `${position}px`
-//       }, 0)
-//       clearTimeout(() => {
-//         dino.style.top = `${position}`
-//       })
-//       await wait(0)
-//     }
-//   }
-//   dinoUp()
-// }
-// const dinoPlayTwo = () => {
-//   function wait(time) {
-//     return new Promise((resolve) => {
-//       setTimeout(() => {
-//         resolve('')
-//       }, time)
-//     })
-//   }
-
-//   //   async function dinoDown() {
-//   //     for (let position = 65; position > 240; position++) {
-//   //       setTimeout(() => {
-//   //         dino.style.top = `${position}px`
-//   //       }, 1)
-//   //       await wait(1)
-//   //     }
-//   //   }
-//   //   dinoDown()
-// }
-// document.addEventListener('keydown', (key) => {
-//   if (key.code === 'Space') {
-//     setInterval(
-//       (test = () => {
-//         dinoPlay()
-//       }),
-//       1
-//     )
-//   }
-// })
-//   setInterval(
-//     (test = () => {
-//       dinoPlayTwo()
-//     }),
-//     1000
-//   )
-//   clearInterval(dinoPlayTwo)
 
 //First Obstacle
 const gamePlay = () => {
@@ -100,7 +42,7 @@ const gamePlay = () => {
     })
   }
   async function runObstacleTwo() {
-    for (let position = 960; position > -10; position--) {
+    for (let position = 960; position > -20; position--) {
       setTimeout(() => {
         obstacle.style.left = `${position}px`
         if (
@@ -128,7 +70,7 @@ const gamePlayTwo = () => {
     })
   }
   async function runObstacleTwo() {
-    for (let position = 960; position > -10; position--) {
+    for (let position = 960; position > -20; position--) {
       setTimeout(() => {
         obstacleTwo.style.left = `${position}px`
         if (
@@ -163,7 +105,7 @@ const background = () => {
     })
   }
   async function moveBackground() {
-    for (let position = 960; position > -10; position--) {
+    for (let position = 960; position > -20; position--) {
       setTimeout(() => {
         let terry = document.querySelector('.terry')
         terry.style.left = `${position}px`
@@ -182,7 +124,7 @@ const backgroundTwo = () => {
     })
   }
   async function moveBackgroundTwo() {
-    for (let position = 960; position > -10; position--) {
+    for (let position = 960; position > -20; position--) {
       setTimeout(() => {
         let doug = document.querySelector('.doug')
         doug.style.left = `${position}px`
@@ -211,7 +153,7 @@ if (gameRunning === true) {
     (test = () => {
       background()
     }),
-    4620
+    8000
   )
   setInterval(
     (test = () => {
@@ -219,7 +161,4 @@ if (gameRunning === true) {
     }),
     7000
   )
-} else {
-  clearInterval(gamePlay)
-  clearInterval(gamePlayTwo)
 }

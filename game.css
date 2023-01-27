@@ -3,8 +3,6 @@
 .container{
   display:grid;
   grid-template-areas:
-  "empty game empty"
-  "empty game empty"
   "empty game empty";
   background-color:rgb(63, 63, 67);
 }
@@ -13,13 +11,28 @@
   background-color:rgb(186, 219, 248);
   height:35rem;
   width:50rem;
+  border: 4px solid black;
 } 
-/* .cover{
-  grid-area:empty;
+.coverRight{
+  top:1rem;
+  left:55rem;
+  height:35rem; 
+  width:10rem;
+  border-left:4px solid black;
+  position:absolute;
   background-color:rgb(63, 63, 67);
-  height: 35rem;
-  width:50rem
-} */
+
+}
+.coverLeft{
+  top:1rem;
+  left:-5.2rem;
+  height:35rem; 
+  width:10rem;
+  border-right:4px solid black;
+  position:absolute;
+  background-color:rgb(63, 63, 67);
+
+}
 h1{
   font-size:50px;
   text-align:center;
@@ -27,15 +40,19 @@ h1{
 }
 
 .dino{
-display:block;
-position:relative;
-top:15rem;
+  background-image:url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic1.cartoonnetwork.asia%2Fcharacters%2Fgumball%2Fcarmen.png&f=1&nofb=1&ipt=deb5798256b5907e99041fec0de23505d005a1570004e5726f1a5f73b93a5884&ipo=images);
+background-size:70px 160px;
+  display:block;
+position:absolute;
+top: 27.5rem;
 width: 3rem;
 height: 8rem;
 background-color:rgb(186, 219, 248);
-}
 
+}
 .obs{
+  background-image:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipartion.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fclip-art-dino-dinosaur-dinosaurio-dragon-art.png&f=1&nofb=1&ipt=8754ddf5a38931565171d45ca6901b6132983b785759e5abccb14e417b7f447f&ipo=images);
+  background-size: 64px 64px;
   display:block;
   position:absolute;
   left:60rem;
