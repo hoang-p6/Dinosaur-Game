@@ -2,7 +2,8 @@
 let dino = document.querySelector('.dino')
 let obstacle = document.querySelector('.obs')
 let obstacleTwo = document.querySelector('.obs2')
-let dinoPosition = dino.offsetTop
+let dinoTop = dino.offsetTop
+let dinoLeft = dino.offsetLeft
 let obstaclePosition = obstacle.offsetLeft
 let obstacleTwoPosition = obstacleTwo.offsetLeft
 let body = document.querySelector('body')
@@ -10,35 +11,86 @@ let score = 0
 let scoreDisplay = document.querySelector('.score')
 let lose = document.querySelector('.lose-screen')
 let gameRunning = true
-const updateScore = () => {
-  score += 1
-  scoreDisplay.innerText = score
-}
-
 //FUNCTIONS//
 //When space is pressed down, Dino jumps
+const updateScore = () => {
+  score++
+  scoreDisplay.innerText = score
+}
 
 const jump = () => {
   document.addEventListener('keydown', (key) => {
     if (key.code === 'Space') {
-      dino.style.bottom = '200px'
+      dino.style.top = '4rem'
+      Animation
     }
   })
   //When space is released, Dino comes back down
   document.addEventListener('keyup', (key) => {
     if (key.code === 'Space') {
-      dino.style.bottom = '0px'
+      dino.style.top = '15rem'
     }
   })
 }
+// const dinoPlay = () => {
+//   function wait(time) {
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve('')
+//       }, time)
+//     })
+//   }
 
-const wait = (time) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('')
-    }, time)
-  })
-}
+//   async function dinoUp() {
+//     for (let position = 240; position > 65; position--) {
+//       setTimeout(() => {
+//         dino.style.top = `${position}px`
+//       }, 0)
+//       clearTimeout(() => {
+//         dino.style.top = `${position}`
+//       })
+//       await wait(0)
+//     }
+//   }
+//   dinoUp()
+// }
+// const dinoPlayTwo = () => {
+//   function wait(time) {
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve('')
+//       }, time)
+//     })
+//   }
+
+//   //   async function dinoDown() {
+//   //     for (let position = 65; position > 240; position++) {
+//   //       setTimeout(() => {
+//   //         dino.style.top = `${position}px`
+//   //       }, 1)
+//   //       await wait(1)
+//   //     }
+//   //   }
+//   //   dinoDown()
+// }
+// document.addEventListener('keydown', (key) => {
+//   if (key.code === 'Space') {
+//     setInterval(
+//       (test = () => {
+//         dinoPlay()
+//       }),
+//       1
+//     )
+//   }
+// })
+//   setInterval(
+//     (test = () => {
+//       dinoPlayTwo()
+//     }),
+//     1000
+//   )
+//   clearInterval(dinoPlayTwo)
+
 //First Obstacle
 const gamePlay = () => {
   function wait(time) {
@@ -48,24 +100,24 @@ const gamePlay = () => {
       }, time)
     })
   }
-  async function runObstacle() {
-    for (let position = 0; position < 1000; position++) {
+  async function runObstacleTwo() {
+    for (let position = 960; position > -10; position--) {
       setTimeout(() => {
+        obstacle.style.left = `${position}px`
         if (
-          (obstacle.offsetLeft === 40 && dino.offsetTop >= 600) ||
-          (obstacle.offsetLeft === -10 && dino.offsetTop >= 600)
+          (obstacle.offsetLeft === 120 && dino.offsetTop >= 400) ||
+          (obstacle.offsetLeft === 48 && dino.offsetTop >= 400)
         ) {
           window.location.href = 'dead.html'
         }
-        if (obstacle.offsetLeft === 40 && dino.offsetTop < 600) {
+        if (obstacle.offsetLeft === 120 && dino.offsetTop < 400) {
           updateScore()
         }
-        obstacle.style.right = `${position}px`
       }, 1)
       await wait(0)
     }
   }
-  runObstacle()
+  runObstacleTwo()
 }
 //Second Obstacle
 const gamePlayTwo = () => {
@@ -77,49 +129,47 @@ const gamePlayTwo = () => {
     })
   }
   async function runObstacleTwo() {
-    for (let position = 0; position < 1000; position++) {
+    for (let position = 960; position > -10; position--) {
       setTimeout(() => {
+        obstacleTwo.style.left = `${position}px`
         if (
-          (obstacleTwo.offsetLeft === 40 && dino.offsetTop >= 600) ||
-          (obstacleTwo.offsetLeft === -10 && dino.offsetTop >= 600)
+          (obstacleTwo.offsetLeft === 120 && dino.offsetTop >= 400) ||
+          (obstacleTwo.offsetLeft === 48 && dino.offsetTop >= 400)
         ) {
-          return gameRunning === false
+          window.location.href = 'dead.html'
         }
-        if (obstacleTwo.offsetLeft === 40 && dino.offsetTop < 600) {
+        if (obstacleTwo.offsetLeft === 120 && dino.offsetTop < 400) {
           updateScore()
         }
-        obstacleTwo.style.right = `${position}px`
       }, 3)
-      await wait(0)
+      await wait(2)
     }
   }
   runObstacleTwo()
 }
-
-//GAME//
+if (
+  (obstacleTwo.offsetLeft === 120 && dino.offsetTop === 257) ||
+  (obstacle.offsetLeft === 120 && dino.offsetTop < 400)
+) {
+  updateScore()
+}
+// jump()
+// GAME//
 if (gameRunning === true) {
   jump()
   setInterval(
     (test = () => {
       gamePlay()
     }),
-    4500
+    5000
   )
   setInterval(
     (test = () => {
       gamePlayTwo()
     }),
-    5000
+    6000
   )
 } else {
   clearInterval(gamePlay)
   clearInterval(gamePlayTwo)
 }
-// let pause = document.querySelector('.pause')
-// let menu = document.querySelector('.pause-menu')
-// const pauseGame = () => {
-//   pause.addEventListener('click', () => {
-//     menu.body.innerHTML = document.appendChild(canvas)
-//   })
-// }
-// pauseGame()
