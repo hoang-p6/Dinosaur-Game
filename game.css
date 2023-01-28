@@ -1,105 +1,117 @@
 
 /* GAME */
+body{
+  background-color:rgb(63, 63, 67);
+}
 .container{
-  display:grid;
-  grid-template-areas:
-  "empty game empty";
-  background-color:rgb(63, 63, 67);
+  display:inline-grid;
+  grid-template-columns:auto auto auto;
 }
-.gameBox{
-  grid-area:game;
+.box{
   background-color:rgb(186, 219, 248);
-  height:35rem;
-  width:50rem;
-  border: 4px solid black;
-} 
-.coverRight{
-  top:1rem;
-  left:55rem;
-  height:35rem; 
-  width:10rem;
-  border-left:4px solid black;
-  position:absolute;
-  background-color:rgb(63, 63, 67);
-
-}
-.coverLeft{
-  top:1rem;
-  left:-5.2rem;
-  height:35rem; 
-  width:10rem;
-  border-right:4px solid black;
-  position:absolute;
-  background-color:rgb(63, 63, 67);
-
+  height:80vh;
+  width:60vw;
+  position:relative;
+  left:16vw;
 }
 h1{
-  font-size:50px;
+  font-size:60px;
   text-align:center;
   color:beige;
+  text-shadow: 2px 2px black;
+}
+#center{
+  background-image:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd0%2F98%2Fbc%2Fd098bc74fe68d594926e962de0ea3a45.png&f=1&nofb=1&ipt=8611584f8762d91c8835960b22591717e6db8d10c5edaa5eda2ff7cef7128d8a&ipo=images);
+  border:3px solid black;
+}
+#left{
+  position:absolute;
+  width:15vw;
+  background-color:rgb(63, 63, 67);
+  left:1.5vw;
+  top:1.4vh;
+  border-right:3px solid black;
+}
+#right{
+  width:15vw;
+  background-color:rgb(63, 63, 67);
+  position:absolute;
+  left:76.8vw;
+  top:2vh;
+  border-left:3px solid black;
+}
+@keyframes jump{
+50%{transform:translateY(-30vh)}
+}
+.hop{
+  animation:jump .7s linear;
 }
 
 .dino{
   background-image:url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic1.cartoonnetwork.asia%2Fcharacters%2Fgumball%2Fcarmen.png&f=1&nofb=1&ipt=deb5798256b5907e99041fec0de23505d005a1570004e5726f1a5f73b93a5884&ipo=images);
-background-size:70px 160px;
+  background-size:11vh 10vw;
+  font-size:0;
   display:block;
-position:absolute;
-top: 27.5rem;
-width: 3rem;
-height: 8rem;
-background-color:rgb(186, 219, 248);
-
+  position:absolute;
+  top: 61vh;
+  width: 5vw;
+  height: 17vh;
 }
 .obs{
-  background-image:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipartion.com%2Fwp-content%2Fuploads%2F2016%2F03%2Fclip-art-dino-dinosaur-dinosaurio-dragon-art.png&f=1&nofb=1&ipt=8754ddf5a38931565171d45ca6901b6132983b785759e5abccb14e417b7f447f&ipo=images);
   background-size: 64px 64px;
   display:block;
   position:absolute;
-  left:60rem;
-  top: 31rem;
-  width:4rem;
-  height:4rem;
-  background-color:rgb(186, 219, 248);
+  left:140vw;
+  top:67vh;
+  width:4.4vw;
+  height:9vh;
+  
 } 
 .obs2{
+  background-size: 64px 64px;
   display:block;
   position:absolute;
-  left:55rem;
-  top:31rem;
-  width:4rem;
-  height:4rem;
-  background-color:rgb(186, 219, 248);
+  left:140vw;
+  top:67vh;
+  width:4.4vw;
+  height:9vh;
 }
 .score{
   text-align:center;
   position:relative;
   font-size:50px;
   color:beige;
+  text-shadow: 2px 2px black;
 }
+
 body{
   background-color:rgb(63, 63, 67);
 }
 
 .terry{
+  background-size: 64px 64px;
+  display:block;
   position:absolute;
-  height:4rem;
-  background-color:rgb(186, 219, 248);
-  left:55rem;
-  top:12rem;
-}
-.doug{
+  left:140vw;
+  top:10vh;
+  width:4.4vw;
+  height:9vh;
+} 
+.doug{ 
+  display:block;
   position:absolute;
-  height:3rem;
-  background-color:rgb(186, 219, 248);
-  left:55rem;
-  top:6rem;
-}
+  left:140vw;
+  top:17vh;
+  width:4.4vw;
+  height:9vh;
+} 
 /* HOMESCREEN */
 .home-h1{
   font-size: 100px;
   display:flex;
   justify-content:center;
   color:beige;
+  text-shadow: 2px 2px rgb(9, 17, 89)
 }
 a{
   font-size: 80px;
@@ -124,6 +136,7 @@ container{
   display:flex;
   justify-content:center;
   color:beige;
+  text-shadow: 2px 2px rgb(186, 219, 248);
 }
 .restart-button{
 background-color:rgb(63, 63, 67);
@@ -133,4 +146,4 @@ height:100px;
   background-color:rgb(63, 63, 67);
 height:110px;
 
-}
+} 
